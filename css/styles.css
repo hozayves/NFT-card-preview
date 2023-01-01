@@ -191,3 +191,21 @@ a:hover {
 /* ----------------------------------------------------------------- *\
 #ATTRIBUTION
 \*------------------------------------------------------------------*/
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: var(--white);
+    margin-top: 3rem;
+}
+
+.attribution a {
+    color: var(--primary-soft-blue);
+    text-decoration: none;
+    padding: 4px;
+    border: 2px dashed transparent;
+    font-weight: 600;
+}
+.attribution a:hover {
+    border: 2px dashed var(--primary-cyan);
+    color: var(--primary-cyan);
+}
