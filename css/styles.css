@@ -5,18 +5,18 @@
 /* Modern CSS Reset - https: //piccalil.li/blog/a-modern-css-reset/*/
 
 /* Box sizing rules */
-html {
-    box-sizing: border-box;
-}
 *,
 *::after,
 *::before {
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 /* Remove default margin */
-html,body,
+body,
 p,
-h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6,
+figure,
+blockquote,
+dd,dl {
     margin: 0;
 }
 /* Set core root defaults */
@@ -34,7 +34,7 @@ a:not([class]) {
     text-decoration-skip-ink: auto;
 }
 /* Make images easier to work with */
-img {
+img,picture {
     display: block;
     height: auto;
     max-width: 100%;
@@ -44,14 +44,105 @@ img {
     html:focus-within {
         scroll-behavior: auto;
     }
+    *,
+    *::after,
+    *::before {
+        scroll-behavior: auto;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 /* ----------------------------------------------------------------- *\
 #BASE
 \* ----------------------------------------------------------------- */
-
-
+:root {
+    --white: hsl(0, 0%, 100%);
+    --primary-soft-blue: hsl(215, 51%, 70%);
+    --primary-cyan: hsl(178, 100%, 50%);
+    --neutral-drak-blue: hsl(217, 54%, 11%); /*Main BG*/
+    --neutral-drak-blue-2: hsl(216, 50%, 16%); /*Card BG*/
+    --neutral-drak-blue-3: hsl(215, 32%, 27%); /*line*/
+}
+body{
+    font-size: 16px;
+    font-family: "Outfit", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--neutral-drak-blue)
+}
 
 /* ----------------------------------------------------------------- *\
 #CARDS
 \* ----------------------------------------------------------------- */
+.ether-main {
+    border-radius: 1.3rem;
+    background-color: var(--neutral-drak-blue-2);
+    padding: 1rem;
+    max-width: 20rem;
+    /* box-shadow: var(--neutral-drak-blue-3)  */
+    text-align: left;   
+}
+.ether-img-container {
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+.ether-img {
+    border-radius: 1rem;
+}
+.ether-title {
+    color: var(--white);
+    font-weight: 600;
+}
+a:hover {
+    color: var(--primary-cyan);
+    cursor: pointer;
+}
+.ether-content {
+    color: var(--primary-soft-blue);
+    font-weight: 300;
+    margin: 1rem 0;
+}
+.ether-stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.ether-stats-number {
+    display: flex;
+    color: var(--primary-cyan);
+    flex-basis: 50%;
+}
+.ether-icon-number {
+    margin-right: 0.5rem;
+    width: 12px;
+    height: 22px;
+}
+.ether-stats-time {
+    display: flex;
+    flex-basis: 50%;
+}
+.ether-icon-clock {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}
+.ether-clock-text {
+    color: var(--primary-soft-blue); 
+}
+.separate-line {
+    border: 1px solid var(--neutral-drak-blue-3);
+    height: 0;
+}
+
+
+
+
+/* ----------------------------------------------------------------- *\
+#ATTRIBUTION
+\*------------------------------------------------------------------*/
